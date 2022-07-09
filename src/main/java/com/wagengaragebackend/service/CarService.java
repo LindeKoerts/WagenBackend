@@ -1,6 +1,5 @@
 package com.wagengaragebackend.service;
 
-
 import com.wagengaragebackend.data.Car;
 import com.wagengaragebackend.exception.RecordNotFoundException;
 import com.wagengaragebackend.repository.CarRepository;
@@ -29,7 +28,6 @@ public class CarService {
         return cars;
     }
 
-
     public Car getCarById(long id) {
         if(carRepository.existsById(id)){
             Car car = carRepository.findById(id).get();
@@ -42,14 +40,12 @@ public class CarService {
         return carRepository.findByLicensePlate(licensePlate);
     }
 
-
     public void removeCarById ( long id){
         if(carRepository.existsById(id)){
             carRepository.deleteById(id);
         }else {
             throw new RecordNotFoundException("Unknown ID");}
     }
-
 
     public void updateCar(long id, Car car) {
         if (carRepository.existsById(id)) {
@@ -83,8 +79,6 @@ public class CarService {
         } else {
             throw new RecordNotFoundException("Unknown ID"); }
     }
-
-
 }
 
 

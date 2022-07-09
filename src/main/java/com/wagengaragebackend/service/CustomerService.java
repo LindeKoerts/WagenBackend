@@ -23,8 +23,6 @@ public class CustomerService {
         this.carJobRepository = carJobRepository;
     }
 
-
-
     public List<Customer> getCustomers(){
         List<Customer> customers = customerRepository.findAll();
         return  customers;
@@ -47,13 +45,11 @@ public class CustomerService {
             throw new RecordNotFoundException(); }
     }
 
-
     public long addCustomer(Customer customer) {
         Customer addedCustomer = customerRepository.save(customer);
         return addedCustomer.getId();
 
     }
-
 
     public void removeCustomerById(long id) {
         if(customerRepository.existsById(id)){
@@ -72,12 +68,5 @@ public class CustomerService {
             throw new RecordNotFoundException();
         }
     }
-
-
-
-
-
-
-
 }
 

@@ -41,12 +41,10 @@ public class CarJobInvoiceServiceTest {
     @BeforeEach
     void setup() {
         CarJobInvoiceService carJobInvoiceService;
-
     }
 
     @Captor
     ArgumentCaptor<CarJobInvoice> carJobInvoiceCaptor;
-
 
     @Test
     public void testGetCarJobInvoices(){
@@ -149,7 +147,6 @@ public class CarJobInvoiceServiceTest {
 
         //ACT
         carJobInvoiceService.addCarJobInvoice(null, "jansen", null, "jans@mail", null);
-
 
         Mockito
                 .verify(carJobInvoiceRepository).save(carJobInvoiceCaptor.capture());
@@ -274,7 +271,6 @@ public class CarJobInvoiceServiceTest {
         carJobInvoiceService.changeStatus(carJob);
 
         assertEquals(CarJobStatus.INVOICED, carJob.getStatus());
-
     }
 
     @Test
@@ -292,7 +288,6 @@ public class CarJobInvoiceServiceTest {
         CarJob found = carJobInvoiceService.getCarJobFromOptionalInput(  1L, "jansen", null, "null",null);
 
         assertEquals(carJob ,found);
-
     }
 
     @Test
@@ -311,6 +306,7 @@ public class CarJobInvoiceServiceTest {
 
         assertEquals(carJob ,found);
     }
+
     @Test
     public void testGetCarJobFromOptionalInputNameAndTelephone(){
 
@@ -365,7 +361,6 @@ public class CarJobInvoiceServiceTest {
 
         assertEquals(carJob ,found);
     }
-
 
     @Test
     public void testGetCarjobFromNameAndTelephone(){

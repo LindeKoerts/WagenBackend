@@ -1,7 +1,6 @@
 package com.wagengaragebackend.dto;
 
 import com.wagengaragebackend.data.FileUpload;
-import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploadDto {
 
@@ -15,10 +14,8 @@ public class FileUploadDto {
 
     private String downloadUri;
 
-
     public FileUploadDto() {
     }
-
 
     public static FileUploadDto fromFileUpload(FileUpload fileUpload){
         FileUploadDto Dto = new FileUploadDto();
@@ -28,7 +25,6 @@ public class FileUploadDto {
         Dto.setMediaType(fileUpload.getMediaType());
         return Dto;
     }
-
 
     public String getTitle() {
         return title;

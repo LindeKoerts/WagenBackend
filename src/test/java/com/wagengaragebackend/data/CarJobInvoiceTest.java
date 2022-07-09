@@ -83,7 +83,6 @@ public class CarJobInvoiceTest {
         List<String> expect = Arrays.asList("part3", "part4");
         List<String> descript = this.invoice.getPartDescriptions();
         assertEquals(expect, descript);
-
     }
 
     @Test
@@ -94,10 +93,5 @@ public class CarJobInvoiceTest {
         BigDecimal total = this.invoice.getTotalCharge();
         assertEquals(expect, total );
     }
-
-
-
-
-
 }
 

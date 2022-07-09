@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,8 +43,6 @@ public class CarJobController {
         this.jobPartService = jobPartService;
     }
 
-
-
     @GetMapping("")
     public ResponseEntity<Object> getCarJobs() {
         List<CarJob> carJobs = carJobService.getCarJobs();
@@ -62,7 +59,6 @@ public class CarJobController {
         return ResponseEntity.ok().body(dto);
     }
 
-
     @GetMapping("/status")
     public ResponseEntity<Object> getByStatus(@RequestParam CarJobStatus status){
         List<CarJob> carJobs = carJobService.getCarJobsByStatus(status);
@@ -73,8 +69,6 @@ public class CarJobController {
             carJobsDto.add(carJobDto); }
         return ResponseEntity.ok().body(carJobsDto);
     }
-
-
 
     @PostMapping("")
     public ResponseEntity<Object> addCarJob (@RequestBody CarJobInputDto Dto) {
@@ -91,16 +85,12 @@ public class CarJobController {
         return ResponseEntity.created(location).body(location);
     }
 
-
-
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateCarJob(@PathVariable("id") long id, @RequestBody CarJobInputDto Dto) {
         CarJob carJob = Dto.toCarJob(Dto);
         carJobService.updateCarJob(id, carJob);
         return ResponseEntity.noContent().build().ok("Updated");
     }
-
-
 
     @PatchMapping("/{id}")
     public ResponseEntity<Object> partialUpdate(@PathVariable("id") long id, @RequestBody CarJobInputDto dto){
@@ -115,19 +105,9 @@ public class CarJobController {
         return ResponseEntity.noContent().build().ok("Updated");
     }
 
-
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> removeCarJob(@PathVariable("id") long id) {
         carJobService.deleteCarJobById(id);
         return ResponseEntity.noContent().build().ok("Deleted");
     }
-
-
-
-
-
-
-
-
 }

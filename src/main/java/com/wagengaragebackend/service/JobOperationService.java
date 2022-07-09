@@ -30,8 +30,6 @@ public class JobOperationService {
         this.jobOperationRepository = jobOperationRepository;
     }
 
-
-
     public com.wagengaragebackend.data.JobOperation getJobOperationById(Long carJobId, Long operationId) {
         JobOperationID ID = new JobOperationID(carJobId, operationId);
         if (jobOperationRepository.existsById(ID)) {
@@ -47,7 +45,6 @@ public class JobOperationService {
         return jobOperationRepository.findAllByOperationId(operationId);
     }
 
-
     public JobOperationID addJobOperation(Long carJobId, Long operationId){
         if(!carJobRepository.existsById(carJobId)){throw new RecordNotFoundException();}
         CarJob carJob = carJobRepository.findById(carJobId).get();
@@ -61,8 +58,6 @@ public class JobOperationService {
         jobOperationRepository.save(jobOperation);
         return ID;
     }
-
-
 
     public void removeJobOperation(Long carJobId, Long operationId) {
         JobOperationID ID = new JobOperationID(carJobId, operationId);
@@ -83,13 +78,5 @@ public class JobOperationService {
             jobOperationRepository.save(existingJobOperation); }
         else { throw new RecordNotFoundException(); }
     }
-
-
-
-
-
-
-
-
 }
 

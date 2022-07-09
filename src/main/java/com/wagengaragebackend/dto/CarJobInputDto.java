@@ -7,12 +7,9 @@ import com.wagengaragebackend.data.CarJob;
 import com.wagengaragebackend.data.CarJobStatus;
 
 import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-
 public class CarJobInputDto {
-
 
     private CarJobStatus status;
 
@@ -27,10 +24,8 @@ public class CarJobInputDto {
 
     private Long carId;
 
-
     public CarJobInputDto() {
     }
-
 
     public CarJob toCarJob(CarJobInputDto Dto) {
         CarJob carJob = new CarJob();
@@ -39,7 +34,6 @@ public class CarJobInputDto {
         carJob.setRemarks(Dto.getRemarks());
         return carJob;
     }
-
 
     public Long getCarId() {
         return carId;

@@ -1,7 +1,6 @@
 package com.wagengaragebackend.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -21,12 +20,9 @@ public class Part {
 
     private Long quantity;
 
-
     @OneToMany(mappedBy = "part", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<JobPart> parts;
-
-
 
     public Part() {
     }

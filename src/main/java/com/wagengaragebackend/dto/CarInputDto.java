@@ -1,7 +1,5 @@
 package com.wagengaragebackend.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wagengaragebackend.data.Car;
 
 public class CarInputDto {
@@ -11,8 +9,6 @@ public class CarInputDto {
     private String type;
 
     private Long customerId;
-
-
 
     public static Car toCar(CarInputDto carInputDto){
         Car car = new Car();
@@ -44,6 +40,4 @@ public class CarInputDto {
     public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
-
-
 }

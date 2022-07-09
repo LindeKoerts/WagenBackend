@@ -10,11 +10,9 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
 @Service
 public class CarJobInvoiceService {
-
 
     private CarJobRepository carJobRepository;
 
@@ -25,7 +23,6 @@ public class CarJobInvoiceService {
     private JobPartRepository jobPartRepository;
 
     private CarJobInvoiceRepository carJobInvoiceRepository;
-
 
     @Autowired
     public CarJobInvoiceService(CarJobRepository carJobRepository, CustomerRepository customerRepository,
@@ -38,9 +35,6 @@ public class CarJobInvoiceService {
         this.carJobInvoiceRepository = carJobInvoiceRepository;
     }
 
-
-
-
     public List<CarJobInvoice> getInvoices(){
         List<CarJobInvoice> inv = carJobInvoiceRepository.findAll();
         return inv;
@@ -52,13 +46,11 @@ public class CarJobInvoiceService {
         }else{throw new RecordNotFoundException();}
     }
 
-
     // Ophalen juiste carjob, daaruit verzamelen info, berekenen totaalbedragen incl. btw  en genereren/opslaan factuur.
 
     public Long addCarJobInvoice(Long carJobId, String name, String telephone, String email, String licensePlate) {
 
         CarJob carJob = getCarJobFromOptionalInput(carJobId, name, telephone,  email, licensePlate);
-
 
         CarJobInvoice carJobInvoice = new CarJobInvoice();
         carJobId = carJob.getId();
@@ -69,8 +61,6 @@ public class CarJobInvoiceService {
             carJobInvoice.setCustomerName(carJob.getCustomer().getName());
             carJobInvoice.setRemarks(carJob.getRemarks());
 
-
-
             List<JobOperation> jobOperations = jobOperationRepository.findAllByCarJobId(carJobId);
             List<String> operationDescriptions = getOperationsDescriptions(jobOperations);
 
@@ -79,8 +69,6 @@ public class CarJobInvoiceService {
 
             carJobInvoice.setOperationDescriptions(operationDescriptions);
             carJobInvoice.setPartDescriptions(partDescriptions);
-
-
 
             BigDecimal operationsCharge = calculateOperationsCharge(jobOperations);
 
@@ -94,15 +82,12 @@ public class CarJobInvoiceService {
 
             changeStatus(carJob);
 
-
             carJobInvoiceRepository.save(carJobInvoice);
 
         }else { throw new BadRequestException("check status of carjob"); }
 
         return carJobInvoice.getId();
     }
-
-
 
     // Ophalen van juiste carjob voor invoice aan hand van opgave aan balie van ofwel: carjobID, klantnaam+telfoonnr,
     // klantnaam+email, of kenteken.    wellicht onnodig ? (evt. makkelijk te verwijderen)
@@ -164,15 +149,11 @@ public class CarJobInvoiceService {
         return jobC;
     }
 
-
-
-
     public boolean StatusCheck(CarJob carJob){
         CarJobStatus status = carJob.getStatus();
         if( (status == CarJobStatus.COMPLETED) || (status == CarJobStatus.DONOTEXECUTE)){
             return true;}  return false;
     }
-
 
     public List<String> getOperationsDescriptions(List<JobOperation> jobOperations){
         List<String> operationDescriptions = new ArrayList<String>();
@@ -188,8 +169,6 @@ public class CarJobInvoiceService {
             partDescriptions.add(jobPart.getPart().getDescription());
         } return partDescriptions; }
 
-
-
     public BigDecimal calculateOperationsCharge(List<JobOperation> jobOperations){
         BigDecimal operationsCharge  = new BigDecimal("0");
         for(JobOperation jobOperation : jobOperations) {
@@ -200,7 +179,6 @@ public class CarJobInvoiceService {
         BigDecimal operationsWithVAT = operationsCharge.multiply(new BigDecimal(1.21));
         return operationsWithVAT;
     }
-
 
     public BigDecimal calculatePartsCharge(List<JobPart> jobParts){
         BigDecimal partsCharge = new BigDecimal(0);
@@ -219,14 +197,10 @@ public class CarJobInvoiceService {
         carJob.setStatus(CarJobStatus.INVOICED);
     }
 
-
     public void removeCarJobInvoiceById(long id) {
         if(carJobInvoiceRepository.existsById(id)){
             carJobInvoiceRepository.deleteById(id);}else{
             throw new RecordNotFoundException(""); }
     }
-
-
-
 }
 

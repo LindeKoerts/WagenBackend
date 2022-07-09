@@ -10,13 +10,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/files")
@@ -29,8 +27,6 @@ public class FileUploadController {
     public FileUploadController(FileUploadService fileUploadService) {
         this.fileUploadService = fileUploadService;
     }
-
-
 
     @GetMapping("")
     public ResponseEntity<Object> getFiles() {
@@ -77,12 +73,4 @@ public class FileUploadController {
         fileUploadService.deleteFile(id);
         return ResponseEntity.noContent().build();
     }
-
-
-
-
-
-
-
-
 }

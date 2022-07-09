@@ -1,9 +1,6 @@
 package com.wagengaragebackend.dto;
 
-import com.wagengaragebackend.data.CarJobInvoice;
-
 public class InvoiceInputDto {
-
 
     public Long carJobId;
 

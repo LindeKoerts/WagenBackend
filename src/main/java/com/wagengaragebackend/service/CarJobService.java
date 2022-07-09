@@ -21,14 +21,11 @@ public class CarJobService {
 
     private CustomerRepository customerRepository;
 
-
     @Autowired
     public CarJobService(CarJobRepository carJobRepository, CustomerRepository customerRepository){
         this.carJobRepository = carJobRepository;
         this.customerRepository  = customerRepository;
-
     }
-
 
     public List<CarJob> getCarJobs(){
         return carJobRepository.findAll();
@@ -39,7 +36,6 @@ public class CarJobService {
             return carJobRepository.findById(id).get();}
         else { throw new RecordNotFoundException("Unknown Id");}
     }
-
 
     public long addCarJob(CarJob carJob) {
 
@@ -82,13 +78,11 @@ public class CarJobService {
         return carJobRepository.findByStatus(status);
     }
 
-
     public void deleteCarJobById(long id){
         if(carJobRepository.existsById(id)){
             carJobRepository.deleteById(id);
         }else{
             throw new RecordNotFoundException(); }
     }
-
 }
 

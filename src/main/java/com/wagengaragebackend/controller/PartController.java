@@ -15,13 +15,10 @@ public class PartController {
 
     private PartService partService;
 
-
-
     @Autowired
     public PartController(PartService partService){
         this.partService = partService;
     }
-
 
     @GetMapping("")
     public ResponseEntity<Object> getParts() {
@@ -48,7 +45,6 @@ public class PartController {
         partService.updatePart(id, part);
         return ResponseEntity.noContent().build().ok("Updated");
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> removePart(@PathVariable("id") long id) {

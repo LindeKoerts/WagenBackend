@@ -65,7 +65,6 @@ public class CustomerServiceTest {
                 .doReturn(Optional.of(customer)).when(customerRepository).findById(1L);
 
         assertThat(customerService.getCustomerById(1L)).isEqualTo(customer);
-
     }
 }
 

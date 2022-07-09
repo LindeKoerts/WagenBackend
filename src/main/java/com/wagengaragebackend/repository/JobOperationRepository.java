@@ -11,6 +11,5 @@ public interface JobOperationRepository extends JpaRepository<JobOperation, JobO
     List<JobOperation> findAllByCarJobId(Long carJobId);
 
     List<JobOperation> findAllByOperationId(Long operationId);
-
 }
 

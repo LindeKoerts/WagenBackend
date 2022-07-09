@@ -10,5 +10,4 @@ public interface JobPartRepository extends JpaRepository<JobPart, JobPartID> {
 
     List<JobPart> findAllByCarJobId(Long carJobId);
     List<JobPart> findAllByPartId(Long partId);
-
 }

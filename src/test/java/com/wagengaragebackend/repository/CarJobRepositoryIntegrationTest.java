@@ -20,7 +20,6 @@ public class CarJobRepositoryIntegrationTest {
     @Test
     void whenFindByStatusThenReturnCarjob(){
 
-
         CarJob job = new CarJob( );
         job.setStatus(CarJobStatus.PLANNED);
         entityManager.persist(job);
@@ -29,7 +28,6 @@ public class CarJobRepositoryIntegrationTest {
 
         assertThat(found.getStatus()).isEqualTo(CarJobStatus.PLANNED);
     }
-
 
     //test gebruik 2zoekvariabelen als key returns juiste carJob
     @Test
@@ -57,9 +55,7 @@ public class CarJobRepositoryIntegrationTest {
 
         assertThat(found.getCustomer().getEmail()).isEqualTo("jansen@mail");
     }
-
  */
-
 }
 
 

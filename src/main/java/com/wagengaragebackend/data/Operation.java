@@ -1,7 +1,6 @@
 package com.wagengaragebackend.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -19,11 +18,9 @@ public class Operation {
 
     private BigDecimal price;
 
-
     @OneToMany(mappedBy = "operation", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<JobOperation> operations;
-
 
     public Operation() {
     }
@@ -64,8 +61,4 @@ public class Operation {
     public void setOperations(List<JobOperation> operations) {
         this.operations = operations;
     }
-
-
-
-
 }

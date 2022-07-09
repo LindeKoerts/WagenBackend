@@ -1,7 +1,5 @@
 package com.wagengaragebackend.dto;
 
-import com.wagengaragebackend.data.JobPart;
-
 import java.math.BigDecimal;
 
 public class JobPartInputDto {
@@ -11,7 +9,6 @@ public class JobPartInputDto {
     private Long jobId;
 
     private BigDecimal quantity;
-
 
     public Long getPartId() {
         return partId;

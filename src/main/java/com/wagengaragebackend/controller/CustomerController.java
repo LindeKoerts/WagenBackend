@@ -12,7 +12,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/customers")
@@ -24,9 +23,6 @@ public class CustomerController {
     public CustomerController(CustomerService customerService){
         this.customerService = customerService;
     }
-
-
-
 
     @GetMapping("")
     public ResponseEntity<Object> searchCustomers() {
@@ -46,7 +42,6 @@ public class CustomerController {
         customerDto = customerDto.fromCustomer(customer);
         return ResponseEntity.ok().body(customerDto);
     }
-
 
     @GetMapping ("/name")
     public ResponseEntity<Object> getByName(@RequestParam String name){
@@ -83,11 +78,4 @@ public class CustomerController {
         customerService.removeCustomerById(id);
         return ResponseEntity.noContent().build().ok("Deleted");
     }
-
-
-
-
-
-
-
 }

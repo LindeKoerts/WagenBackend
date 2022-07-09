@@ -8,7 +8,6 @@ import java.util.Set;
 @Table(name="users")
 public class User {
 
-
     @Id
     @Column(nullable = false, unique = true)
     private String username;
@@ -22,8 +21,6 @@ public class User {
     @Column(nullable = false)
     private boolean enabled = true;
 
-
-
     @OneToMany(
             targetEntity = Authority.class,
             mappedBy = "username",
@@ -31,9 +28,6 @@ public class User {
             orphanRemoval = true,
             fetch = FetchType.EAGER)
     private Set<Authority> authorities = new HashSet<>();
-
-
-
 
     public User() {
     }
@@ -44,7 +38,6 @@ public class User {
         this.enabled = enabled;
         this.email = email;
     }
-
 
     public String getUsername() {
         return username;
@@ -86,7 +79,6 @@ public class User {
         this.authorities = authorities;
     }
 
-
     public void addAuthority(Authority authority) {
         this.authorities.add(authority);
     }
@@ -99,5 +91,4 @@ public class User {
     public void removeAuthority(String authorityString) {
         this.authorities.removeIf(authority -> authority.getAuthority().equalsIgnoreCase(authorityString));
     }
-
 }

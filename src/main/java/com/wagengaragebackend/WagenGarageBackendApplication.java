@@ -9,5 +9,4 @@ public class WagenGarageBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(WagenGarageBackendApplication.class, args);
     }
-
 }

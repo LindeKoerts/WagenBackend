@@ -5,12 +5,10 @@ import com.wagengaragebackend.data.Customer;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 public class CustomerDto {
 
-    // @NotEmpty
     private Long id;
     @NotEmpty
     private String name;
@@ -21,9 +19,6 @@ public class CustomerDto {
 
     private List<Car> car;
 
-
-
-
     public static CustomerDto fromCustomer(Customer customer){
         CustomerDto customerDto= new CustomerDto();
         customerDto.setId(customer.getId());
@@ -32,8 +27,6 @@ public class CustomerDto {
         customerDto.setTelephone(customer.getTelephone());
         return customerDto;
     }
-
-
 
     public Long getId() {
         return id;
@@ -66,8 +59,5 @@ public class CustomerDto {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
-
-
-
 
 }

@@ -15,15 +15,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import javax.sql.DataSource;
 
-import javax.sql.DataSource;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
-
     private DataSource dataSource;
-
 
     private JwtRequestFilter jwtRequestFilter;
 
@@ -33,15 +29,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         this.jwtRequestFilter = jwtRequestFilter;
     }
 
-
-
     @Autowired
     public void  configure(AuthenticationManagerBuilder auth) throws Exception{
 
         auth.jdbcAuthentication().dataSource( dataSource);
     }
-
-
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -87,6 +79,4 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
-
-
 }

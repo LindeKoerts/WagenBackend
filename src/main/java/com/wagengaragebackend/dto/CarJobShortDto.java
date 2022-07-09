@@ -7,14 +7,9 @@ import com.wagengaragebackend.data.CarJob;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-
-
 public class CarJobShortDto {
 
-
-
     private Long id;
-
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     @JsonSerialize
@@ -22,7 +17,6 @@ public class CarJobShortDto {
 
     @Size(max=255)
     private String remarks;
-
 
     public CarJobShortDto() {
     }
@@ -40,10 +34,6 @@ public class CarJobShortDto {
         carJobShortDto.setRemarks(carJob.getRemarks());
         return carJobShortDto;
     }
-
-
-
-
 
     public Long getId() {
         return id;

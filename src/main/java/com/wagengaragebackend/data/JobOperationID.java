@@ -14,7 +14,6 @@ public class JobOperationID implements Serializable{
     @Column(name="carjob_id")
     private Long carJobId;
 
-
     public JobOperationID() {
     }
 

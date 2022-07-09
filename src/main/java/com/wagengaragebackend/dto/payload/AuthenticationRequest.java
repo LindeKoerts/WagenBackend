@@ -2,11 +2,9 @@ package com.wagengaragebackend.dto.payload;
 
 public class AuthenticationRequest {
 
-
     private String username;
 
     private String password;
-
 
     public AuthenticationRequest() {
     }
@@ -14,7 +12,6 @@ public class AuthenticationRequest {
         this.username = username;
         this.password = password;
     }
-
 
     public String getUsername() {
         return username;
@@ -28,8 +25,5 @@ public class AuthenticationRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
 
 }

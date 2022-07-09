@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 public class CarJobDto {
 
-
     private Long id;
 
     @JsonSerialize
@@ -28,7 +27,6 @@ public class CarJobDto {
 
     @JsonIgnore
     private CarDto car;
-
 
     public CarJobDto() {
     }
@@ -53,7 +51,6 @@ public class CarJobDto {
         carJobDto.setCar(Dta);
         return carJobDto;
     }
-
 
     public CarJobStatus getStatus() {
         return status;
@@ -102,5 +99,4 @@ public class CarJobDto {
     public void setCustomer(CustomerDto customer) {
         this.customer = customer;
     }
-
 }

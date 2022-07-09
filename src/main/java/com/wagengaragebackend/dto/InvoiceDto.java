@@ -21,8 +21,6 @@ public class InvoiceDto {
 
     private BigDecimal totalCharge;
 
-
-
     public InvoiceDto fromInvoice(CarJobInvoice invoice){
         InvoiceDto dto = new InvoiceDto();
         dto.setCustomerName(invoice.getCustomerName());
@@ -33,7 +31,6 @@ public class InvoiceDto {
         dto.setPartsCharge(invoice.getPartsCharge());
         dto.setTotalCharge(invoice.getTotalCharge());
         return dto;
-
     }
 
     public String getCustomerName() {
@@ -91,6 +88,4 @@ public class InvoiceDto {
     public void setTotalCharge(BigDecimal totalCharge) {
         this.totalCharge = totalCharge;
     }
-
-
 }

@@ -10,17 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/api/v1/carjobinvoices")
 public class CarJobInvoiceController {
-
-
 
     private CarJobInvoiceService carJobInvoiceService;
 
@@ -31,8 +27,6 @@ public class CarJobInvoiceController {
         this.carJobInvoiceService = carJobInvoiceService;
         this.carJobService = carJobService;
     }
-
-
 
     @GetMapping("")
     public ResponseEntity<Object> getInvoices() {
@@ -67,12 +61,9 @@ public class CarJobInvoiceController {
         return  ResponseEntity.created(location).body(location);
     }
 
-
     @DeleteMapping("/{carjobinvoice_id}")
     public ResponseEntity<Object> removeInvoice(@PathVariable("carjobinvoice_id") long id) {
         carJobInvoiceService.removeCarJobInvoiceById(id);
         return ResponseEntity.noContent().build().ok("Deleted");
     }
-
-
 }

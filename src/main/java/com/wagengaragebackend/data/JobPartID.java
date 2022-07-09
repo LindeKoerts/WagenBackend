@@ -14,7 +14,6 @@ public class JobPartID implements Serializable {
     @Column(name="part_id")
     private Long partId;
 
-
     public JobPartID() {
     }
 
@@ -22,7 +21,6 @@ public class JobPartID implements Serializable {
         this.carJobId = carJobId;
         this.partId = partId;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -52,7 +50,4 @@ public class JobPartID implements Serializable {
     public void setPartId(Long partId) {
         this.partId = partId;
     }
-
-
-
 }

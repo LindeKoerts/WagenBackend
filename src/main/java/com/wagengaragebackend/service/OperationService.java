@@ -1,6 +1,5 @@
 package com.wagengaragebackend.service;
 
-
 import com.wagengaragebackend.data.Operation;
 import com.wagengaragebackend.exception.RecordNotFoundException;
 import com.wagengaragebackend.repository.OperationRepository;
@@ -19,8 +18,6 @@ public class OperationService {
     public OperationService(OperationRepository operationRepository){
         this.operationRepository = operationRepository;
     }
-
-
 
     public long addOperation(Operation operation){
         Operation addedOperation = operationRepository.save(operation);

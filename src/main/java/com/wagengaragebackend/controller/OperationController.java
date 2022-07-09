@@ -13,19 +13,12 @@ import java.net.URI;
 @RequestMapping("api/v1/operations")
 public class OperationController {
 
-
     private OperationService operationService;
-
-
 
     @Autowired
     public OperationController(OperationService operationService) {
         this.operationService = operationService;
     }
-
-
-
-
 
     @GetMapping("")
     public ResponseEntity<Object> getOperation() {
@@ -52,7 +45,6 @@ public class OperationController {
         operationService.updateOperation(id, operation);
         return ResponseEntity.noContent().build().ok("Updated");
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> removeOperation(@PathVariable("id") long id) {
