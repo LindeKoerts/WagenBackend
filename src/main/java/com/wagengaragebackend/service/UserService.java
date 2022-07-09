@@ -24,17 +24,13 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-
     public Iterable<User> getUsers() {
         return userRepository.findAll();
     }
 
-
     public Optional<User> getUser(String username) {
         return userRepository.findById(username);
     }
-
-
 
     public String createUser(User user) {
         String password = user.getPassword();
@@ -63,15 +59,12 @@ public class UserService {
         }else{throw new UserNotFoundException();}
     }
 
-
     public Set<Authority> getAuthorities(String username) {
         if(userRepository.existsById(username)){
             User user = userRepository.findById(username).get();
             return user.getAuthorities();
         }else{throw new UserNotFoundException();}
     }
-
-
 
     public void addAuthority(String username, String authority) {
         if (userRepository.existsById(username)) {
@@ -83,7 +76,6 @@ public class UserService {
             throw new UserNotFoundException(); }
     }
 
-
     public void removeAuthority(String username, String authority) {
         if (userRepository.existsById(username)) {
             User user = userRepository.findById(username).get();
@@ -92,6 +84,5 @@ public class UserService {
         } else {
             throw new UserNotFoundException(); }
     }
-
 }
 

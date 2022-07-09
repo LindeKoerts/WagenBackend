@@ -17,14 +17,11 @@ public class JobOperation {
     @JsonIgnore
     private Operation operation;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("carJobId")
     @JoinColumn(name = "carjob_id")
     @JsonIgnore
     private CarJob carJob;
-
-
 
     public JobOperation() {
     }
@@ -33,7 +30,6 @@ public class JobOperation {
         this.carJob = carJob;
 
     }
-
 
     public Operation getOperation() {
         return operation;
@@ -50,7 +46,6 @@ public class JobOperation {
     public void setCarJob(CarJob carJob) {
         this.carJob = carJob;
     }
-
 
     public JobOperationID getID() {
         return ID;

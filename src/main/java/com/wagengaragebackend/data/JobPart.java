@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 @Table(name="jobparts")
 public class JobPart {
 
-
     @EmbeddedId
     private JobPartID ID;
 
@@ -19,7 +18,6 @@ public class JobPart {
     @JsonIgnore
     private Part part;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("carJobId")
     @JoinColumn(name = "carjob_id")
@@ -27,7 +25,6 @@ public class JobPart {
     private CarJob carJob;
 
     private BigDecimal quantity;
-
 
     public JobPart() {
     }
@@ -37,7 +34,6 @@ public class JobPart {
         this.carJob = carJob;
         this.quantity = quantity;
     }
-
 
     public Part getPart() {
         return part;

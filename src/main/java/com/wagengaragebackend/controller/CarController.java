@@ -39,7 +39,6 @@ public class CarController {
             carsDto.add(CarDto.fromCar(car)); }
         return ResponseEntity.ok(carsDto);}
 
-
     @GetMapping ("/{id}")
     public ResponseEntity<Object> getCar(@PathVariable("id") long id){
         Car car = carService.getCarById(id);

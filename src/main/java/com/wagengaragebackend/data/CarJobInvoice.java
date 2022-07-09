@@ -1,17 +1,12 @@
 package com.wagengaragebackend.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-
 @Entity
 @Table(name = "carjobinvoices")
 public class CarJobInvoice {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +28,6 @@ public class CarJobInvoice {
 
     private BigDecimal totalCharge;
 
-
     public CarJobInvoice() {
     }
 
@@ -48,7 +42,6 @@ public class CarJobInvoice {
         this.partsCharge = partsCharge;
         this.totalCharge = totalCharge;
     }
-
 
     public String getCustomerName() {
         return customerName;

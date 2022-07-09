@@ -1,9 +1,6 @@
 package com.wagengaragebackend.data;
 
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -37,7 +34,6 @@ public class CarJob {
     @JoinColumn(name = "car_id")
     private Car car;
 
-
     public CarJob() {
     }
 
@@ -49,7 +45,6 @@ public class CarJob {
         this.customer = customer;
         this.car = car;
     }
-
 
     public Long getId() {
         return id;

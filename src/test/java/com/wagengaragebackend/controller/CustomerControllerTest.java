@@ -25,7 +25,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @WebMvcTest
 @ContextConfiguration(classes= {WagenGarageBackendApplication.class})
 public class CustomerControllerTest {
@@ -58,10 +57,7 @@ public class CustomerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", Matchers.hasSize(1)))
                 .andExpect((ResultMatcher) jsonPath("$[0].name", is(customer.getName())));
-
     }
-
-
 
     @Test
     void testInputSerialization() throws Exception{
@@ -74,8 +70,6 @@ public class CustomerControllerTest {
                 .andExpect(status().isOk());
 
     }
-
     // test servicelayer call,
-
 }
 

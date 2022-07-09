@@ -23,7 +23,6 @@ public class UserController {
         this.userService = userService;
     }
 
-
     @GetMapping(value = "")
     public ResponseEntity<Object> getUsers() {
         return ResponseEntity.ok().body(userService.getUsers());
@@ -33,8 +32,6 @@ public class UserController {
     public ResponseEntity<Object> getUser(@PathVariable("username") String username) {
         return ResponseEntity.ok().body(userService.getUser(username));
     }
-
-
 
     @PostMapping(value = "")
     public ResponseEntity<Object> createUser(@RequestBody User user) {
@@ -83,7 +80,4 @@ public class UserController {
         userService.removeAuthority(username, authority);
         return ResponseEntity.ok().body("deleted");
     }
-
-
-
 }

@@ -1,7 +1,6 @@
 package com.wagengaragebackend.data;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name="files")
@@ -10,7 +9,6 @@ public class FileUpload {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
 
     @Column(name = "file_name")
     private String fileName;
@@ -24,10 +22,8 @@ public class FileUpload {
     @Column(name = "media_type")
     private String mediaType;
 
-
     @Column(name = "location")
     private String location;
-
 
     public FileUpload() {
     }
@@ -64,7 +60,6 @@ public class FileUpload {
         this.description = description;
     }
 
-
     public String getLocation() {
         return location;
     }
@@ -80,6 +75,4 @@ public class FileUpload {
     public void setMediaType(String mediaType) {
         this.mediaType = mediaType;
     }
-
-
 }

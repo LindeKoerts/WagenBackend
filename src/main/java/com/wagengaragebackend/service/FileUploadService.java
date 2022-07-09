@@ -47,7 +47,6 @@ public class FileUploadService {
         }
     }
 
-
     public Iterable<FileUpload> getFiles() {
         return fileUploadRepository.findAll();
     }
@@ -73,7 +72,6 @@ public class FileUploadService {
     //      return fileUploadRepository.existsById(id);
     //   }
 
-
     public Resource downloadFile(long id) {
         Optional<FileUpload> stored = fileUploadRepository.findById(id);
 
@@ -94,9 +92,7 @@ public class FileUploadService {
         return null;
     }
 
-
     public long uploadFile(FileUploadInputDto dto) {
-
 
         MultipartFile file = dto.getFile();
         String originalFilename = StringUtils.cleanPath(file.getOriginalFilename());
@@ -117,7 +113,6 @@ public class FileUploadService {
         return storedFile.getId();
     }
 
-
     public void deleteFile(long id) {
         Optional<FileUpload> stored = fileUploadRepository.findById(id);
 
@@ -137,6 +132,5 @@ public class FileUploadService {
             throw new RecordNotFoundException();
         }
     }
-
 }
 

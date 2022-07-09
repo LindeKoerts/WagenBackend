@@ -1,6 +1,5 @@
 package com.wagengaragebackend.service;
 
-
 import com.wagengaragebackend.data.CarJob;
 import com.wagengaragebackend.data.JobPart;
 import com.wagengaragebackend.data.JobPartID;
@@ -31,7 +30,6 @@ public class JobPartService {
         this.jobPartRepository = jobPartRepository;
 
     }
-
 
     public Collection<JobPart> getJobParts(){
         return jobPartRepository.findAll();
@@ -85,6 +83,5 @@ public class JobPartService {
             jobPartRepository.save(existingJobPart); }
         else { throw new RecordNotFoundException(); }
     }
-
 }
 

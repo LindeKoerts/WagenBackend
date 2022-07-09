@@ -6,15 +6,12 @@ import javax.validation.constraints.Email;
 
 public class CustomerInputDto {
 
-
     private String name;
 
     @Email(message = "use a valid Email-adress")
     private String email;
 
     private String telephone;
-
-
 
     public CustomerInputDto() {
     }
@@ -24,8 +21,6 @@ public class CustomerInputDto {
         this.email = email;
         this.telephone = telephone;
     }
-
-
 
     public static Customer toCustomer(CustomerInputDto customerInputDto){
         Customer customer= new Customer();

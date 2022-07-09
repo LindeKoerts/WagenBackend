@@ -8,8 +8,6 @@ import java.util.List;
 
 public class CarDto {
 
-
-
     private Long id;
 
     private String licensePlate;
@@ -20,10 +18,8 @@ public class CarDto {
 
     private  List<CarJobShortDto> carJobs;
 
-
     public CarDto() {
     }
-
 
     public static CarDto fromCar(Car car){
         CarDto carDto= new CarDto();
@@ -43,8 +39,6 @@ public class CarDto {
 
         return carDto;
     }
-
-
 
     public Long getId() {
         return id;

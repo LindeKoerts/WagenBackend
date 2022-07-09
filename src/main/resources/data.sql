@@ -3,13 +3,11 @@ INSERT INTO users (username, password, email, enabled)
 VALUES     ('user', '$2a$12$TAKl2cn3O0KyQQed8d00MeAVomp2uQvNCJ4K8lQNwn1LLxuaASQ5i','user@mail.nl', TRUE),
            ('admin', '$2a$12$TAKl2cn3O0KyQQed8d00MeAVomp2uQvNCJ4K8lQNwn1LLxuaASQ5i', 'admin@mail.nl', TRUE);
 
-
 INSERT INTO authorities (username, authority)
 
 VALUES    ('user', 'ROLE_USER'),
           ('admin', 'ROLE_USER'),
           ('admin', 'ROLE_ADMIN');
-
 
 INSERT INTO parts (description, price, quantity)
 
@@ -34,7 +32,6 @@ VALUES  ( 'workinghour complete on 10min.', 66.00, 1),
         ( 'injector flip12', 299.98, 5),
         ('timing belt BG-2x', 259.00, 6 );
 
-
 INSERT INTO operations ( description, price)
 
 VALUES ( 'standard inspection', 45.00 ),
@@ -52,18 +49,18 @@ VALUES ( 'standard inspection', 45.00 ),
 
 INSERT INTO customers (name, email, telephone)
 
-VALUES ('Pieters', 'pieters@gmail.com', '030-34504412'),
-       ('Klaassen', 'klaas@hotmail.com', '06-98345612'),
-       ('vandenBerg', 'willem@Mail.nl', '030-356635'),
-       ('Karels', 'sjaak@planet.nl', '0656349823'),
-       ('Boekels', 'boek@hotmail.com', '030-45238263');
+VALUES ('Drijsen', 'drijsen@gmail.com', '030-57506612'),
+       ('deRooij', 'rooij@hotmail.com', '06-96346621'),
+       ('Jongsma', 'gijs@Mail.nl', '030-356635'),
+       ('Waiboer', 'suze@planet.nl', '0623559045'),
+       ('Negenman', 'lindi@hotmail.com', '030-44539063');
 
 INSERT INTO cars (license_plate, type, customer_id)
 
-VALUES ('67ER34', 'Ford taunus-Q', 1),
-       ('34GW56', 'Ford capri 3L', 2),
-       ('88GD123', 'opel ascona 16s',3),
-       ('12AB34', 'Opel manta', 4);
+VALUES ('73RDSJ', 'Nissan Micra', 1),
+       ('KD511K', 'Mini Countryman', 2),
+       ('3TRL56', 'Range roover SUV',3),
+       ('NT355P', 'Alfa Romeo MiTo', 4);
 
 INSERT INTO carjobs  (status, repair_date, remarks, customer_id, car_id)
 
@@ -76,7 +73,6 @@ INSERT INTO joboperations  (operation_id, carjob_id )
 VALUES  ( 1, 2),
         (6, 2),
         (1, 3);
-
 
 INSERT INTO jobparts  (part_id,  carjob_id, quantity)
 VALUES  (20, 2, 1),

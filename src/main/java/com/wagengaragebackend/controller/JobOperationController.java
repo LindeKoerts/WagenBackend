@@ -2,9 +2,7 @@ package com.wagengaragebackend.controller;
 
 import com.wagengaragebackend.data.JobOperation;
 import com.wagengaragebackend.data.JobOperationID;
-import com.wagengaragebackend.data.JobPart;
 import com.wagengaragebackend.dto.JobOperationDto;
-import com.wagengaragebackend.dto.JobPartDto;
 import com.wagengaragebackend.service.JobOperationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +16,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/joboperations")
 public class JobOperationController {
-
 
     private JobOperationService jobOperationService;
 
@@ -36,7 +33,6 @@ public class JobOperationController {
         return ResponseEntity.created(location).body(location);
     }
 
-
     @GetMapping("/{carjob_id}/{operation_id}")
     public ResponseEntity<Object> getJobOperation(@PathVariable("carjob_id") Long carJobId,
                                                   @PathVariable("operation_id") Long operationId){
@@ -45,7 +41,6 @@ public class JobOperationController {
         Dto = Dto.fromJobOperation(jobOperation);
         return ResponseEntity.ok().body(Dto);
     }
-
 
     @GetMapping("/{carjob_id}/operations")
     public ResponseEntity<Object> getJobOperationsByCarJobId (@PathVariable("carjob_id") Long carJobId){

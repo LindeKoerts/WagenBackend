@@ -1,9 +1,5 @@
 package com.wagengaragebackend.data;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,14 +17,11 @@ public class Customer {
 
     private String telephone;
 
-
     @OneToMany(mappedBy = "customer")
     private List<CarJob> carJob;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Car> car;
-
-
 
     public Customer() {
     }
@@ -38,7 +31,6 @@ public class Customer {
         this.email = email;
         this.telephone = telephone;
     }
-
 
     public Long getId() {
         return id;
@@ -80,7 +72,6 @@ public class Customer {
         this.carJob = carJob;
     }
 
-
     public List<Car> getCar() {
         return car;
     }
@@ -88,5 +79,4 @@ public class Customer {
     public void setCar(List<Car> car) {
         this.car = car;
     }
-
 }

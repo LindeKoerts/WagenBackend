@@ -14,23 +14,18 @@ import java.math.BigDecimal;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/jobparts")
 public class JobPartController {
 
-
     private JobPartService jobPartService;
-
 
     @Autowired
     public JobPartController(JobPartService jobPartService) {
         this.jobPartService = jobPartService;
     }
-
-
 
     @PostMapping("/{carjob_id}/{part_id}")
     public ResponseEntity<Object> addJobPart(@PathVariable("carjob_id")Long carJobId,
@@ -77,7 +72,6 @@ public class JobPartController {
         return ResponseEntity.ok().body(Dtos);
     }
 
-
     @DeleteMapping("/{carjob_id}/{part_id}")
     public ResponseEntity<Object> removeJobPart (@PathVariable("carjob_id") Long carJobId,
                                                  @PathVariable("part_id") Long partId) {
@@ -93,5 +87,4 @@ public class JobPartController {
         jobPartService.updateJobPart(carJobId, partId, quantity);
         return ResponseEntity.noContent().build().ok("Updated");
     }
-
 }

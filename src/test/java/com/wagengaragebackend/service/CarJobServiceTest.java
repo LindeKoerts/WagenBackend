@@ -41,7 +41,6 @@ public class CarJobServiceTest {
         carJob.setRepairDate(date);
         carJob.setId(22L);
 
-
         Mockito
                 .when(carJobRepository.save(carJob))
                 .thenReturn(carJob);

@@ -9,7 +9,6 @@ public class AuthorityKey implements Serializable {
 
     private String authority;
 
-
     public AuthorityKey() {
     }
 

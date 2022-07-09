@@ -13,6 +13,4 @@ public interface CarJobRepository extends JpaRepository<CarJob, Long> {
     CarJob findByStatusAndCustomerNameAndCustomerEmail(CarJobStatus status, String name, String email);
 
     CarJob findByStatusAndCustomerNameAndCustomerTelephone(CarJobStatus status, String name, String telephone);
-
-
 }
