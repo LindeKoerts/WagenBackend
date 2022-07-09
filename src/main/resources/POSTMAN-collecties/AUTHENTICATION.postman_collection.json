@@ -1,0 +1,39 @@
+{
+  "info": {
+    "_postman_id": "ecb8d554-784c-4d45-8654-f8d6bc05860f",
+    "name": "AUTHENTICATION",
+    "description": "Verkrijgen jwt-token",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "authenticate  {body:  username + password}",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\"  :  \"naam\"  ,\r\n\r\n  \"password\"  :  \"password\"  \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/authenticate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "authenticate"
+          ]
+        },
+        "description": "Voer je bij User & Authorities geregistreerde name en password in, of gebruik \"user\" of \"admin\" en \"password\".\n\nGebruik bij elk request een geldig token, in te vullen bij : Authentication, BearerToken"
+      },
+      "response": []
+    }
+  ]
+}

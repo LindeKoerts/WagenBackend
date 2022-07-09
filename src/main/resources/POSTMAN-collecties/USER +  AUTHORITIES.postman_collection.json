@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "db458b5b-d75d-4c8a-806b-c4140c1cbd41",
+		"name": "USER +  AUTHORITIES",
+		"description": "Post , get, update en delete users en bijbehorende authorities.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "Vraag op alle users."
+			},
+			"response": []
+		},
+		{
+			"name": "user    {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/jan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"jan"
+					]
+				},
+				"description": "Vraag de gegevens op van een user, selecteer met username."
+			},
+			"response": []
+		},
+		{
+			"name": "user    { body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzOTE2NzAyMSwiaWF0IjoxNjM4MzAzMDIxfQ.h5W-KiQaX3gOfwyM8u-P1ttxlf1DJgZrjISXa9sCN3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :  \"jansen\" ,\r\n\r\n    \"password\"  :  \"wachtwoord\" ,\r\n\r\n    \"email\"  :  \"ef@mailnl\" ,\r\n\r\n    \"enabled\" :  \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "Voer een nieuwe user in. Gebruik body als template."
+			},
+			"response": []
+		},
+		{
+			"name": "user   {name  + body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :  \"\" ,\r\n\r\n    \"password\"  :  \"\" ,\r\n\r\n    \"email\"  :  \"\" ,\r\n\r\n    \"enabled\" :  \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/{username}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"{username}"
+					]
+				},
+				"description": "Update gegevens van een bestaande user. Selecteer met username."
+			},
+			"response": []
+		},
+		{
+			"name": "user {username}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/jan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"jan"
+					]
+				},
+				"description": "Verwijder een user. Selecteer met user-naam."
+			},
+			"response": []
+		},
+		{
+			"name": "authorities         {username}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/{username}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"{username}"
+					]
+				},
+				"description": "Vraag van een user, zijn authoritie(s) op. Selecteer met zijn naam"
+			},
+			"response": []
+		},
+		{
+			"name": "authority       (username + body)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MTMxOTk5NiwiaWF0IjoxNjQwMDIzOTk2fQ.qTCtgAI5g3J6x_UI7Ghl2iwZmwqmTOPsp3I3OMRYWsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n   \"authority\"  :  \"ROLE_USER\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/authorities/{username}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"authorities",
+						"{username}"
+					]
+				},
+				"description": "Ken een authority toe aan een user."
+			},
+			"response": []
+		},
+		{
+			"name": "authority   (username +  authority)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/{username}/{authority}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"{username}",
+						"{authority}"
+					]
+				},
+				"description": "Verwijder een authority bij een user. Selecteer met username."
+			},
+			"response": []
+		}
+	]
+}

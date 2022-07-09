@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "fa27b9a4-d38d-4dda-8319-5062b8dfb01c",
+		"name": "CARJOB",
+		"description": "Get, post, update of verwijder carjob.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "carjobs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobs"
+					]
+				},
+				"description": "Geeft alle carjobs, mét eigenaars."
+			},
+			"response": []
+		},
+		{
+			"name": "carjob  {carjob_id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobs/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobs",
+						"{id}"
+					]
+				},
+				"description": "Vraag een carjob op( mét eigenaar) , selecteer met Id."
+			},
+			"response": []
+		},
+		{
+			"name": "carjob  {body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM5MTQ5NTk0LCJpYXQiOjE2MzgyODU1OTR9.umwEmi3Je8wAFZe8zGJVUfwtXF98ZzQKZwT2XIqmKmw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\"  :  \"COMPLETED\" ,\r\n\r\n    \"repairDate\"  :  \"2021-08-22 11:30\"       ,\r\n\r\n    \"remarks\"  :  \"test\"  ,\r\n    \r\n    \"customerId\"  :  2 ,\r\n\r\n    \"carId\"  : 2\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobs"
+					]
+				},
+				"description": "Maak een carJob aan. Gebruik de body als template."
+			},
+			"response": []
+		},
+		{
+			"name": "carjob  {id + body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM5MTQ5NTk0LCJpYXQiOjE2MzgyODU1OTR9.umwEmi3Je8wAFZe8zGJVUfwtXF98ZzQKZwT2XIqmKmw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\"  :  \"COMPLETED\" ,\r\n\r\n    \"repairDate\"  :   \"2021-12-12 12:30\" ,\r\n\r\n    \"remarks\"  :  \"test\" \r\n\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobs/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobs",
+						"{ID}"
+					]
+				},
+				"description": "Update carjob met status,repairDate en remarks . Selecteer job met Id."
+			},
+			"response": []
+		},
+		{
+			"name": "carjob   {id + body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM5MTQ5NTk0LCJpYXQiOjE2MzgyODU1OTR9.umwEmi3Je8wAFZe8zGJVUfwtXF98ZzQKZwT2XIqmKmw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\"  :  \"PLANNED\" ,\r\n\r\n    \"repairDate\"  :  \"2019-02-02 11:30\" ,\r\n\r\n    \"remarks\"  :  \"test4\"\r\n\r\n    \r\n\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobs/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobs",
+						"{ID}"
+					]
+				},
+				"description": "Update carjob met één of meer velden. Selecteer carjob met Id."
+			},
+			"response": []
+		},
+		{
+			"name": "carjob  {status}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null,
+				"description": "Selecteer carJobs met status: PLANNED, DONOTEXECUTE, COMPLETED, INVOICED of PAID"
+			},
+			"response": []
+		},
+		{
+			"name": "carjob  {carjob_id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjM4MjM3MzI5LCJpYXQiOjE2MzczNzMzMjl9.xgIV9CeJJs1KPnmyS_vmXi9fy3LpyrmSNoNG0XRbzns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobs/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobs",
+						"4"
+					]
+				},
+				"description": "Verwijder carJob. Selecteer met Id."
+			},
+			"response": []
+		}
+	]
+}

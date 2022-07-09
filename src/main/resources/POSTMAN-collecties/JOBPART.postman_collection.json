@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "68e6fcc9-fc86-4c92-a581-07f286f9bc0e",
+		"name": "JOBPART",
+		"description": "Add, read, update and remove JobParts.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jobpart  {carjob_id/part_id,  body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDUyOTMyNCwiaWF0IjoxNjM5NjY1MzI0fQ.tItrLUAAqCItV_YONmCtb3AJ3C5Yb72dcdCxGmClvyk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"quantity\"  :  \"1\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jobparts/{carJob-Id}/{part-Id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jobparts",
+						"{carJob-Id}",
+						"{part-Id}"
+					]
+				},
+				"description": "Registreer gebruikte standaard onderdelen. Selecteer met carjob-Id en/of part-Id, voer in de body het aantal in. (Voor tijdseenheden: Id = 1.)"
+			},
+			"response": []
+		},
+		{
+			"name": "jobpart   {carjob_id, part_id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDcyMDEzOCwiaWF0IjoxNjM5ODU2MTM4fQ._awGT-la3h5MTD592FxNLyMRpQMxsc6MqLjkm4XP3lg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jobparts/{carjob-Id}/{part-Id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jobparts",
+						"{carjob-Id}",
+						"{part-Id}"
+					]
+				},
+				"description": "Vraag een jobpart op, selecteer met carjob-Id en part-Id."
+			},
+			"response": []
+		},
+		{
+			"name": "jobparts  {carjob_id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDUyOTMyNCwiaWF0IjoxNjM5NjY1MzI0fQ.tItrLUAAqCItV_YONmCtb3AJ3C5Yb72dcdCxGmClvyk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jobparts/{carjob-Id}/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jobparts",
+						"{carjob-Id}",
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jobparts   {part_id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDUyOTMyNCwiaWF0IjoxNjM5NjY1MzI0fQ.tItrLUAAqCItV_YONmCtb3AJ3C5Yb72dcdCxGmClvyk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jobparts/{part-Id}/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jobparts",
+						"{part-Id}",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jobpart  {carjob_id/part_id, body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"quantity\"  :  \"\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jobparts/{carjob_id}/{part_id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jobparts",
+						"{carjob_id}",
+						"{part_id}"
+					]
+				},
+				"description": "Verander het aantal jobparts. Selecteer met carjob-Id en part-Id."
+			},
+			"response": []
+		},
+		{
+			"name": "jobpart   {carjob_id/part_id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jobparts/{carjob_id}/{part_id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jobparts",
+						"{carjob_id}",
+						"{part_id}"
+					]
+				},
+				"description": "Verwijder een jobpart, selecteer met job-Id en part-Id."
+			},
+			"response": []
+		}
+	]
+}

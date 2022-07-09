@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "3151b6f0-51de-44f8-af48-e2e8b83afd26",
+		"name": "PART",
+		"description": "Beheer de voorraad onderdelen.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "parts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts"
+					]
+				},
+				"description": "Vraag een overzicht van alle standaard onderdelen."
+			},
+			"response": []
+		},
+		{
+			"name": "part  {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzOTI1MTQxOCwiaWF0IjoxNjM4Mzg3NDE4fQ.IgxxeQltJuscikLm08Vf40FHG2NIGlcAlo18sF6_E5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/{part-Id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						"{part-Id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "part    {body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\"  :  \"part234\" ,\r\n\r\n    \"price\"  :  \"12.00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts"
+					]
+				},
+				"description": "Voeg een nieuw onderdeel toe aan bestand."
+			},
+			"response": []
+		},
+		{
+			"name": "part   {part_id, body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MTMxOTk5NiwiaWF0IjoxNjQwMDIzOTk2fQ.qTCtgAI5g3J6x_UI7Ghl2iwZmwqmTOPsp3I3OMRYWsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\"  :  \"part-12\" ,\r\n\r\n    \"price\"  :  \"100.95\"  ,\r\n\r\n    \"quantity\"  :    \"25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/{part-Id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						"{part-Id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "part  {part_id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM4MjI4MjYzLCJpYXQiOjE2MzczNjQyNjN9.SU-OSukXXY9iDdSrqLVRmotGY00kM828qlwhWh5pOrE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/parts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"parts",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

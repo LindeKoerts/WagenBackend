@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "a36a45af-77ad-47ed-985d-3c722670b4f0",
+		"name": "CAR",
+		"description": "Get, post, update, of delete cars.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cars",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cars"
+					]
+				},
+				"description": "Verkrijg een overzicht van alle cars, mét eigenaar en job(s) per car."
+			},
+			"response": []
+		},
+		{
+			"name": "car   {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjM4MjM3MzI5LCJpYXQiOjE2MzczNzMzMjl9.xgIV9CeJJs1KPnmyS_vmXi9fy3LpyrmSNoNG0XRbzns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cars/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"{ID}"
+					]
+				},
+				"description": "Gebruik car-id om car op te vragen, incl. eigenaar en job(s)."
+			},
+			"response": []
+		},
+		{
+			"name": "car  {body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM5MTQ5NTk0LCJpYXQiOjE2MzgyODU1OTR9.umwEmi3Je8wAFZe8zGJVUfwtXF98ZzQKZwT2XIqmKmw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\"  :  \"test32\",\r\n\r\n    \"licensePlate\"  :  \"AA564\" ,\r\n\r\n    \r\n    \"customerId\"  :  4\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cars"
+					]
+				},
+				"description": "Voeg een car toe. Gebruik de body als template om eigen gegevens toe te voegen."
+			},
+			"response": []
+		},
+		{
+			"name": "car    {id  + body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDIyMTEzNiwiaWF0IjoxNjM5MzU3MTM2fQ.P93hhVMt3VgKC8ep5-Hpr8gjvzVxSx3Ekdb8E0WyJV0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\"  :  \"Auto6\" ,\r\n\r\n    \"licensePlate\"  :  \"13FG56\"  ,\r\n\r\n    \"customerId\"   :    2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cars/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"{ID}"
+					]
+				},
+				"description": "Update car met één of meerdere velden. Selecteer car met Id."
+			},
+			"response": []
+		},
+		{
+			"name": "car   {id  +  licenseplate}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjM4MjM3MzI5LCJpYXQiOjE2MzczNzMzMjl9.xgIV9CeJJs1KPnmyS_vmXi9fy3LpyrmSNoNG0XRbzns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\"  :  \"Car\" ,\r\n\r\n    \"licensePlate\"  :  \"HY67GH\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cars/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"{ID}"
+					]
+				},
+				"description": "Update car type + licenseplatenr. Selecteer car met Id."
+			},
+			"response": []
+		},
+		{
+			"name": "car  {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjM4MjM3MzI5LCJpYXQiOjE2MzczNzMzMjl9.xgIV9CeJJs1KPnmyS_vmXi9fy3LpyrmSNoNG0XRbzns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cars/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cars",
+						"{ID}"
+					]
+				},
+				"description": "Verwijder car uit database. Selecteer met Id."
+			},
+			"response": []
+		}
+	]
+}

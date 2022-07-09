@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "1effdc98-8430-4163-81b2-5f06aad13eb8",
+		"name": "CARJOBINVOICE",
+		"description": "Add, get or remove invoices.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "carjobinvoices",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobivoices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobivoices"
+					]
+				},
+				"description": "Vraag een overzicht met alle invoices."
+			},
+			"response": []
+		},
+		{
+			"name": "carjobinvoice   {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDIyMTEzNiwiaWF0IjoxNjM5MzU3MTM2fQ.P93hhVMt3VgKC8ep5-Hpr8gjvzVxSx3Ekdb8E0WyJV0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobinvoices/{invoice-Id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobinvoices",
+						"{invoice-Id}"
+					]
+				},
+				"description": "Vraag een invoice op, selecteer met id."
+			},
+			"response": []
+		},
+		{
+			"name": "carjobivoice   {body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDIyMTEzNiwiaWF0IjoxNjM5MzU3MTM2fQ.P93hhVMt3VgKC8ep5-Hpr8gjvzVxSx3Ekdb8E0WyJV0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"carJobId\": 2,\r\n\r\n    \"customerName\": \"Klaassen\",\r\n\r\n   \"telephone\": \"06-1234\",\r\n   \"email\": \"klaas@hotmail.com\",\r\n\r\n   \"licensePlate\": \"123AB45\"\r\n} \r\n\r\n   \r\n      \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobinvoices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobinvoices"
+					]
+				},
+				"description": "Genereer een invoice . Selecteer de Job met òf CarJobId; CustomerName + telephoneNr; CustomerName + email, of LicensePlateNr. De carjob-status moet zijn: COMPLETED of DONOTEXECUTE"
+			},
+			"response": []
+		},
+		{
+			"name": "carjobinvoice  {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDIyMTEzNiwiaWF0IjoxNjM5MzU3MTM2fQ.P93hhVMt3VgKC8ep5-Hpr8gjvzVxSx3Ekdb8E0WyJV0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carjobinvoices/{invoice-Id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carjobinvoices",
+						"{invoice-Id}"
+					]
+				},
+				"description": "Verwijder invoice. Select met Id."
+			},
+			"response": []
+		}
+	]
+}

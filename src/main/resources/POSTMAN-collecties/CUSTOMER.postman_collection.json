@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "c9da2794-d24c-438c-bf40-eae1bbd98647",
+		"name": "CUSTOMER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				},
+				"description": "Vraag een overzicht op met alle customers."
+			},
+			"response": []
+		},
+		{
+			"name": "customer  {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjM4MjM3MzI5LCJpYXQiOjE2MzczNzMzMjl9.xgIV9CeJJs1KPnmyS_vmXi9fy3LpyrmSNoNG0XRbzns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/{ID]",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"{ID]"
+					]
+				},
+				"description": "Vraag een customer op , selecteer met Id."
+			},
+			"response": []
+		},
+		{
+			"name": "customer   {body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydXVkIiwiZXhwIjoxNjM5MTQ5NTk0LCJpYXQiOjE2MzgyODU1OTR9.umwEmi3Je8wAFZe8zGJVUfwtXF98ZzQKZwT2XIqmKmw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\"  :  \"jansen\" ,\r\n\r\n    \"email\"  :  \"ff@mail.com\" ,\r\n\r\n    \"telephone\"  :  \"062395945\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				},
+				"description": "Registreer een customer."
+			},
+			"response": []
+		},
+		{
+			"name": "customer   {id  + body}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\"  :  \"piet\" ,\r\n\r\n    \"email\"  :  \"piet@mail\" ,\r\n\r\n    \"telephone\"  :  \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"{id}"
+					]
+				},
+				"description": "Update customergegevens, selecteer mer Id."
+			},
+			"response": []
+		},
+		{
+			"name": "customer  {id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0MDIyMTEzNiwiaWF0IjoxNjM5MzU3MTM2fQ.P93hhVMt3VgKC8ep5-Hpr8gjvzVxSx3Ekdb8E0WyJV0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/{ID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"{ID}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer   {name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null,
+				"description": "Verwijder een customer , selecteer met Id."
+			},
+			"response": []
+		}
+	]
+}
