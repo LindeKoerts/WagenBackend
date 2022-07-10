@@ -89,9 +89,6 @@ public class CarJobInvoiceService {
         return carJobInvoice.getId();
     }
 
-    // Ophalen van juiste carjob voor invoice aan hand van opgave aan balie van ofwel: carjobID, klantnaam+telfoonnr,
-    // klantnaam+email, of kenteken.    wellicht onnodig ? (evt. makkelijk te verwijderen)
-
     public CarJob getCarJobFromOptionalInput(Long carJobId, String name, String telephone, String email, String licensePlate){
         CarJob carJob = new CarJob();
 
@@ -110,8 +107,6 @@ public class CarJobInvoiceService {
 
         }else {throw new BadRequestException("foutieve invoer");}
         return carJob; }
-
-// omdat een customer of car meerdere carjobs kan hebben moet status ook worden meegenomen(uitgaande van max één te invoicen job per customer)
 
     public CarJob getCarJobFromLicensePlate(String licensePlate){
         CarJob job = carJobRepository.findByStatusAndCarLicensePlate(CarJobStatus.COMPLETED, licensePlate);

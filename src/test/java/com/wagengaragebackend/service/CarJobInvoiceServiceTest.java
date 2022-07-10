@@ -154,8 +154,8 @@ public class CarJobInvoiceServiceTest {
         CarJobInvoice carJobInvoice1 = carJobInvoiceCaptor.getValue();
 
         BigDecimal expect = BigDecimal.valueOf((100 + 25.50 )*1.21);
-        BigDecimal  var =  carJobInvoice1.getPartsCharge();                    //hier is gekozen voor afronding, bij hogere
-        BigDecimal found = var.setScale(3, RoundingMode.HALF_EVEN);    // gewenste nauwkeurigheid de exacte berekening navolgen
+        BigDecimal  var =  carJobInvoice1.getPartsCharge();
+        BigDecimal found = var.setScale(3, RoundingMode.HALF_EVEN);
         //ASSERT
         assertEquals("jansen", carJobInvoice1.getCustomerName() );
         assertEquals(expect, found);
@@ -261,9 +261,9 @@ public class CarJobInvoiceServiceTest {
         BigDecimal expected = BigDecimal.valueOf(2*50.00 + 2*25.50).multiply(BigDecimal.valueOf(1.21));
         BigDecimal var = carJobInvoiceService.calculatePartsCharge(jobParts);
 
-        BigDecimal found = var.setScale(3, RoundingMode.HALF_EVEN);   //hier is gekozen voor afronding, bij hogere
-        assertEquals(expected, found );                                      // gewenste nauwkeurigheid  de exacte berekening navolgen
-    }                                                                          //met new Bigdecimal variabelen
+        BigDecimal found = var.setScale(3, RoundingMode.HALF_EVEN);
+        assertEquals(expected, found );
+    }
     @Test
     public void testChangeStatus(){
         CarJob carJob = new CarJob();
