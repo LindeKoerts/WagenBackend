@@ -1,11 +1,8 @@
 # WagenBackend
 
-
-Inleiding: Wagen autogarage applicatie 
-
 Met dit project kan een autogarage het proces van keuringen en reparaties rondom auto's en klanten automatiseren. De uiteindelijke applicatie biedt o.a. de mogelijkheid om klanten en auto's aan te maken. Keuringen en reparaties aan auto's te koppelen en meer. De applicatie kent Authenticatie en Autorisatie zodat data beschermd is.
 
-Om mee te beginnen: 
+# Om mee te beginnen: 
 1.	Het project maakt gebruik van Java version 11 
 2.	Het project maakt gebruik van een PostgreSQL database 
 3.	Het project maakt gebruik van het Spingboot framework en Maven 
@@ -14,14 +11,13 @@ Om mee te beginnen:
 
 Er is een export met de endpoints vanuit postman toegevoegd aan het project. Deze zijn te vinden onder main > resources > POSTMAN collecties. Deze collecties zijn importeerbaar in Postman door binnen postman te gaan naar file > import en vervolgens alle bestanden onder POSTMAN collecties te openen en te importeren. 
 
-Installatie:
+ # Installatie:
 Dit project is het beste te runnen met de IDE IntelIj van Jetbrains. 
 Download de community versie hier: https://www.jetbrains.com/idea/download/ 
 
 De applicatie maakt gebruik van een PostgresSQL database. PostgreSQL kun je hier downloaden: https://www.postgresql.org/download/ 
 
-
-Stappenplan 
+# Stappenplan 
 1.	Installeer de InteliJ IDE en PostGreSQL.
 Hier vind je een makkelijk en kort tutorial om PostGreSQL te installeren.
 https://www.postgresqltutorial.com/install-postgresql/ 
@@ -47,8 +43,7 @@ v.b. ../Autogarage/uploads
 5.	Run het project 
 Als alle stappen zijn genomen zijn de endpoints beschikbaar en kun je deze via postman aanroepen. Je kunt de bijgeleverde export van de endpoints uit postman importeren zodat deze direct beschikbaar zijn, zie hierboven bij om te beginnen hoe dit moet. 
 
-
-De endpoints 
+# De endpoints 
 De endpoints kunnen getest worden met een applicatie als Postman. 
 
 De authenticatie van de applicatie werkt met een Bearer token. Deze token moet worden meegegeven aan elk request binnen Postman. Deze stel je in onder ‘Autorization’ in postman. Bij een Request endpoint (binnen postman) kies je op de tab 'Authorization' voor het Type: Bearer token, onder 'Token' vul je het 'JWT token' in welke je via het 'Authorization' endpoint kunt verkrijgen.
@@ -57,14 +52,11 @@ Deze token geeft toegang voor elk endpoint waar deze user voor geauthorizeerd is
 
 De token verkrijg je door eerst het 'Authorization' endpoint uit te voeren. De token is vervolgens 10 dagen geldig.
 
-*Authorization 
+Authorization 
 - POST/ api/v1/authenticate
 In de body geef je de username en password mee. Hiervoor kan een user uit eerdergenoemde tabel (monteur/administratief_medewerker) gebruikt worden: 
 
 Voor de demo gebruiken we 'password' als wachtwoord, maar normaliter is dit uiteraard niet veilig en zou je dit niet zo instellen.
-
-
-
 
 Authenticatie 
 
