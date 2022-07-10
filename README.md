@@ -33,8 +33,11 @@ https://github.com/LindeKoerts/WagenBackend
 De huidige instellingen zijn als volgt:
 
 spring.sql.init.platform=postgres
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/WagenGarage
+
 spring.datasource.username=wagengarage_admin
+
 spring.datasource.password=123456
 
 4.	Maak een uploads directory aan in de root directory van de project folder of kijk of deze al bestaat.
